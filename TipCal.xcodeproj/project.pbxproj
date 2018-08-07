@@ -14,6 +14,7 @@
 		ECD471D12119E728000C26D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECD471CF2119E728000C26D6 /* LaunchScreen.storyboard */; };
 		ECD471DC2119E728000C26D6 /* TipCalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD471DB2119E728000C26D6 /* TipCalTests.swift */; };
 		ECD471E72119E728000C26D6 /* TipCalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD471E62119E728000C26D6 /* TipCalUITests.swift */; };
+		ECD471F52119F9EF000C26D6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD471F42119F9EF000C26D6 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		ECD471E22119E728000C26D6 /* TipCalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipCalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD471E62119E728000C26D6 /* TipCalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalUITests.swift; sourceTree = "<group>"; };
 		ECD471E82119E728000C26D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECD471F42119F9EF000C26D6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				ECD471C62119E727000C26D6 /* AppDelegate.swift */,
 				ECD471C82119E727000C26D6 /* ViewController.swift */,
 				ECD471CA2119E727000C26D6 /* Main.storyboard */,
+				ECD471F42119F9EF000C26D6 /* SettingViewController.swift */,
 				ECD471CD2119E728000C26D6 /* Assets.xcassets */,
 				ECD471CF2119E728000C26D6 /* LaunchScreen.storyboard */,
 				ECD471D22119E728000C26D6 /* Info.plist */,
@@ -261,6 +264,7 @@
 			files = (
 				ECD471C92119E727000C26D6 /* ViewController.swift in Sources */,
 				ECD471C72119E727000C26D6 /* AppDelegate.swift in Sources */,
+				ECD471F52119F9EF000C26D6 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Jin-Chen.TipCal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -446,7 +450,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Jin-Chen.TipCal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
