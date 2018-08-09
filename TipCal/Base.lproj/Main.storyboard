@@ -32,10 +32,11 @@
                                 <rect key="frame" x="27" y="220" width="321" height="29"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="18%"/>
+                                    <segment title="15%"/>
                                     <segment title="20%"/>
                                     <segment title="25%"/>
                                 </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="Calculate:" destination="BYZ-38-t0r" eventType="valueChanged" id="2bJ-hT-erE"/>
                                     <action selector="Keyboard:" destination="BYZ-38-t0r" eventType="valueChanged" id="9pn-dM-z3w"/>
@@ -107,13 +108,39 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tf-E2-Vhu">
                                 <rect key="frame" x="133" y="339" width="215" height="53"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0a-a8-1Np">
+                                <rect key="frame" x="155" y="602" width="193" height="41"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm8-Wn-Foj">
+                                <rect key="frame" x="27" y="602" width="47" height="41"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4h-cj-Off">
+                                <rect key="frame" x="82" y="602" width="76" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="M3s-qP-cg0" appends="YES" id="OTQ-ej-OZH"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="tFM-ks-Oj9">
                         <barButtonItem key="rightBarButtonItem" title="Settings" style="plain" id="nzX-SZ-2Uz">
@@ -131,6 +158,8 @@
                         <outlet property="BillField" destination="Z4C-5w-Bes" id="YKb-Cq-553"/>
                         <outlet property="TipControl" destination="iyk-dW-ru5" id="DCW-gb-aqX"/>
                         <outlet property="TipLabel" destination="7S8-Xg-mJj" id="6kK-No-qgT"/>
+                        <outlet property="defaultNum" destination="Nm8-Wn-Foj" id="gA9-k7-H5A"/>
+                        <outlet property="defaultValue" destination="M0a-a8-1Np" id="jO3-qF-8U5"/>
                         <outlet property="p1Label" destination="7tf-E2-Vhu" id="cra-Uo-V9I"/>
                         <outlet property="p2Label" destination="KXg-QW-Tvq" id="IAx-IU-Axo"/>
                         <outlet property="p3Label" destination="TO2-hl-7OT" id="z9m-6s-gdn"/>
@@ -138,6 +167,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="M3s-qP-cg0">
+                    <connections>
+                        <action selector="Keyboard:" destination="BYZ-38-t0r" id="Mhk-Kt-VKf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="100" y="120.98950524737631"/>
         </scene>
@@ -149,38 +183,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tip Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqo-Oc-gvF">
-                                <rect key="frame" x="16" y="110" width="230" height="51"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tip Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqo-Oc-gvF">
+                                <rect key="frame" x="16" y="107" width="298" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choice One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aI-nN-HpK">
+                                <rect key="frame" x="28" y="165" width="99" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="LSv-b6-GLl">
-                                <rect key="frame" x="27" y="169" width="321" height="29"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="18%"/>
-                                    <segment title="20%"/>
-                                    <segment title="25%"/>
-                                </segments>
-                                <connections>
-                                    <action selector="TipSet:" destination="UVr-fF-k98" eventType="valueChanged" id="Xgt-w8-5xY"/>
-                                </connections>
-                            </segmentedControl>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcp-Sv-GmO">
-                                <rect key="frame" x="0.0" y="237" width="375" height="430"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Number of People to Split" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFI-0L-dw4">
+                                <rect key="frame" x="16" y="375" width="343" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="oVv-dP-85N">
+                                <rect key="frame" x="265" y="165" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Changes:" destination="UVr-fF-k98" eventType="valueChanged" id="uRJ-v0-evp"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q1-PJ-R2n">
+                                <rect key="frame" x="195" y="165" width="51" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choice One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seR-Hw-eXM">
+                                <rect key="frame" x="28" y="221" width="99" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="jk3-MG-lmV">
+                                <rect key="frame" x="265" y="221" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Changes:" destination="UVr-fF-k98" eventType="valueChanged" id="BGe-Ff-FZx"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gog-yt-pin">
+                                <rect key="frame" x="195" y="221" width="51" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choice One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kev-FM-4Ng">
+                                <rect key="frame" x="28" y="282" width="99" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="so7-ee-vHf">
+                                <rect key="frame" x="265" y="282" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Changes:" destination="UVr-fF-k98" eventType="valueChanged" id="GQ2-IW-PKO"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss6-FR-qE6">
+                                <rect key="frame" x="195" y="282" width="51" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lF3-ZL-2Mr">
+                                <rect key="frame" x="16" y="426" width="343" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.85437996155506135" blue="0.13199102736891266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UVr-fF-k98" id="ugl-9l-ylF"/>
+                                    <outlet property="delegate" destination="UVr-fF-k98" id="3Fi-3c-Fz9"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.8478592809314599" blue="0.45785511350501007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="OL2-vQ-5TA"/>
                     </view>
                     <navigationItem key="navigationItem" id="xm2-UL-jtF"/>
                     <connections>
-                        <outlet property="TipControl" destination="LSv-b6-GLl" id="PgF-NS-lwO"/>
-                        <outlet property="tipControl" destination="LSv-b6-GLl" id="qAh-03-2Tk"/>
+                        <outlet property="numPicker" destination="lF3-ZL-2Mr" id="0d4-G7-0ki"/>
+                        <outlet property="stepper1" destination="oVv-dP-85N" id="RAs-ak-65b"/>
+                        <outlet property="stepper2" destination="jk3-MG-lmV" id="4hC-UJ-wRb"/>
+                        <outlet property="stepper3" destination="so7-ee-vHf" id="BXG-z7-10D"/>
+                        <outlet property="tip1" destination="0q1-PJ-R2n" id="iU2-Oo-ZNX"/>
+                        <outlet property="tip2" destination="Gog-yt-pin" id="n8M-kC-gwx"/>
+                        <outlet property="tip3" destination="Ss6-FR-qE6" id="xeC-e9-W5v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chs-83-FWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
